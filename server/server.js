@@ -11,10 +11,28 @@ dotenv.config()
 const app = express()
 const port = 4000
 
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://food-delivery-frontend-dnp6.onrender.com',
+    'https://food-delivery-admin-v4of.onrender.com',  // ✅ frontend URL here (no trailing slash)
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS not allowed for this origin'));
+    }
+  },
+  credentials: true,
+}));
+
 // middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
+
 
 // database connection
 connectDB()
