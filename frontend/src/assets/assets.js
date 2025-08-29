@@ -67,6 +67,7 @@ import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import pro_icon from './pro.jpg'
 import fleet_icon from './fleet.jpg'
+import foodexpress from './foodexpress.png'
  
 export const assets ={
     fleet_icon,
@@ -92,7 +93,8 @@ export const assets ={
     upload_area,
     parcel_icon,
     search_icon,
-    basket_icon 
+    basket_icon,
+ foodexpress
 }
 
 export const menu_list = [
@@ -153,4 +155,4 @@ export const food_list = [
     }
 ]
 
-export const url = 'http://localhost:4000'
+export const url = 'https://food-delivery-mern-88kc.onrender.com'
